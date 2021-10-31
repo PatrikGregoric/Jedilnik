@@ -1,0 +1,34 @@
+{
+    "jedi": [
+        {
+            "ime": "Riba",
+            "ogljikovi_hidrati": 20,
+            "beljakovine": 15,
+            "mascobe": 8
+        },
+        {
+            "ime": "Rak",
+            "ogljikovi_hidrati": 20,
+            "beljakovine": 30,
+            "mascobe": 4
+        },
+        {
+            "ime": "Cebula",
+            "ogljikovi_hidrati": 10,
+            "beljakovine": 15,
+            "mascobe": 8
+        },
+        {
+            "ime": "Raca",
+            "ogljikovi_hidrati": 20,
+            "beljakovine": 30,
+            "mascobe": 4
+        },
+        {
+            "ime": "Riz",
+            "ogljikovi_hidrati": 24,
+            "beljakovine": 35,
+            "mascobe": 65
+        }
+    ]
+}

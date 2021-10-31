@@ -1,0 +1,36 @@
+{
+    "jedi": [
+        {
+            "ime": "Rak",
+            "ogljikovi_hidrati": 10,
+            "beljakovine": 15,
+            "mascobe": 4
+        },
+        {
+            "ime": "Cebula",
+            "ogljikovi_hidrati": 20,
+            "beljakovine": 15,
+            "mascobe": 4
+        },
+        {
+            "ime": "Riz",
+            "ogljikovi_hidrati": 10,
+            "beljakovine": 14,
+            "mascobe": 12
+        }
+    ],
+    "jedilniki": [
+        {
+            "ime": "Prvi",
+            "zajtrk": "Cebula",
+            "kosilo": "Riz",
+            "vecerja": "Rak"
+        },
+        {
+            "ime": "ok",
+            "zajtrk": "Cebula",
+            "kosilo": "Cebula",
+            "vecerja": "Rak"
+        }
+    ]
+}
