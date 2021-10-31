@@ -1,0 +1,22 @@
+% rebase('base.html')
+
+<form action="/dodaj-jed/" method="POST">
+
+<label for="ime_jedi">Ime jedi:</label>
+<input class="input is-success" type="text" id="ime_jedi" name="ime_jedi" placeholder="ime jedi" value="{{polja.get('ime', '')}}">
+% if "ime" in napake:
+<p class="help is-danger">{{ napake["ime"] }}</p>
+% end
+
+<label for="ogljikovi_hidrati">Ogljikovi hidrati:</label>
+<input class="input is-link" type="text" id="ogljikovi_hidrati" name="ogljikovi_hidrati" placeholder="ogljikovi hidrati">
+
+<label for="beljakovine">Beljakovine:</label>
+<input class="input is-link" type="text" id="beljakovine" name="beljakovine" placeholder="beljakovine">
+
+<label for="mascobe">Mascobe:</label>
+<input class="input is-link" type="text" id="mascobe" name="mascobe" placeholder="mascobe">
+
+<input class="button is-success is-light" type="submit" value="Dodaj jed!">
+
+</form>

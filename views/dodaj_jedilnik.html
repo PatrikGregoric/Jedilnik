@@ -1,0 +1,14 @@
+% rebase('base.html')
+
+</form>
+
+    <form action="/dodaj-v-jedilnik/" method="POST">
+    <label for="ime_jedilnika"><strong>Ime jedilnika: </strong></label>
+    <input class="input is-link" style="width: 20%" type="text" id="ime_jedilnika" name="ime_jedilnika">
+    % include('Obrok.html', id='zajtrk', oznaka='Zajtrk')
+    % include('Obrok.html', id='kosilo', oznaka='Kosilo')
+    % include('Obrok.html', id='vecerja', oznaka='Vecerja')
+    <input class="button is-success" type="submit" value="Dodaj v jedilnik!">
+
+</form>
+

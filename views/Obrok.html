@@ -1,0 +1,12 @@
+<label for="{{id}}"><strong>{{oznaka}}: </strong></label>
+
+<div class="select is-primary">
+    <select name="{{id}}" id="{{id}}">
+        % for jed in kalorije.jedi:
+        <option value="{{jed.ime}}">
+            {{jed.ime}}
+        </option>
+        % end
+    </select>
+</div>
+

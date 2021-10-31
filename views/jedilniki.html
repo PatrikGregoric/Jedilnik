@@ -1,0 +1,44 @@
+% rebase('base.html')
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Jedilnik</th>
+            <th><abbr title="Zajtrk">Zajtrk</abbr></th>
+            <th><abbr title="Kosilo">Kosilo</abbr></th>
+            <th><abbr title="Vecerja">Vecerja</abbr></th>
+            <th><abbr title="Ogljikovi Hidrati">Ogljikovi Hidrati</abbr></th>
+            <th><abbr title="Beljakovine">Beljakovine</abbr></th>
+            <th><abbr title="Mascobe">Mascobe</abbr></th>
+            <th><abbr title="Kalorije">Kalorije</abbr></th>
+        </tr>
+    </thead>
+    <tbody>
+        % for jedilnik in kalorije.jedilniki:
+        <tr>
+          <td><strong>{{jedilnik.ime}}</strong></td>
+          <td>{{jedilnik.zajtrk}}</td>
+          <td>{{jedilnik.kosilo}}</td>
+          <td>{{jedilnik.vecerja}}</td> 
+          <td>{{kalorije.poisci_jed(jedilnik.zajtrk).ogljikovi_hidrati + kalorije.poisci_jed(jedilnik.kosilo).ogljikovi_hidrati + kalorije.poisci_jed(jedilnik.vecerja).ogljikovi_hidrati}}</td>
+          <td>{{kalorije.poisci_jed(jedilnik.zajtrk).beljakovine + kalorije.poisci_jed(jedilnik.kosilo).beljakovine + kalorije.poisci_jed(jedilnik.vecerja).beljakovine}}</td>
+          <td>{{kalorije.poisci_jed(jedilnik.zajtrk).mascobe + kalorije.poisci_jed(jedilnik.kosilo).mascobe + kalorije.poisci_jed(jedilnik.vecerja).mascobe}}</td>
+          <td>{{kalorije.izracun_kalorij(kalorije.poisci_jed(jedilnik.zajtrk).ogljikovi_hidrati + kalorije.poisci_jed(jedilnik.kosilo).ogljikovi_hidrati + kalorije.poisci_jed(jedilnik.vecerja).ogljikovi_hidrati,kalorije.poisci_jed(jedilnik.zajtrk).beljakovine + kalorije.poisci_jed(jedilnik.kosilo).beljakovine + kalorije.poisci_jed(jedilnik.vecerja).beljakovine,kalorije.poisci_jed(jedilnik.zajtrk).mascobe + kalorije.poisci_jed(jedilnik.kosilo).mascobe + kalorije.poisci_jed(jedilnik.vecerja).mascobe)}}
+          </td>
+          <td>
+                <form action="/odstrani-jedilnik/" method="POST">
+                    <button class="button is-light" type="submit" id="jedilnik" name="jedilnik" value="{{jedilnik.ime}}">
+                        Odstrani
+                    </button>
+                </form>
+          </td>
+        </tr>
+        % end
+    </tbody>
+</table>
+
+<a href="/dodaj-v-jedilnik/">
+    <div class="buttons">
+        <button class="button is-link">Dodaj v jedilnik</button>
+    </div>
+</a>

@@ -1,0 +1,37 @@
+% rebase('base.html')
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ime Jedi</th>
+            <th><abbr title="Ogljikovi hidrati">Ogljikovi hidrati</abbr></th>
+            <th><abbr title="Beljakovine">Beljakovine</abbr></th>
+            <th><abbr title="Mascobe">Mascobe</abbr></th>
+            <th><abbr title="Kalorije">Kalorije</abbr></th>
+        </tr>
+    </thead>
+    <tbody>
+        % for jed in kalorije.jedi:
+        <tr>
+          <td><strong>{{jed.ime}}</strong></td>
+          <td>{{jed.ogljikovi_hidrati}}</td>
+          <td>{{jed.beljakovine}}</td>
+          <td>{{jed.mascobe}}</td> 
+          <td>{{kalorije.izracun_kalorij(jed.ogljikovi_hidrati, jed.beljakovine, jed.mascobe)}}</td>
+          <td>
+                <form action="/odstrani-jed/" method="POST">
+                    <button class="button is-light" type="submit" id="jed" name="jed" value="{{jed.ime}}">
+                        Odstrani
+                    </button>
+                </form>
+          </td>
+        </tr>
+        % end
+    </tbody>
+</table>
+
+<a href="/dodaj-jed/">
+    <div class="buttons">
+        <button class="button is-link">Dodaj jed</button>
+    </div>
+</a>
